@@ -1,52 +1,75 @@
-# markopodolak5-dotcom.github.io
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAJESTIC PHOENIX | БАЗА</title>
+    <title>PHOENIX | DATABASE</title>
     <style>
-        body { font-family: sans-serif; background: #1a1a1a; color: #eee; padding: 20px; line-height: 1.6; }
-        h1 { color: #ff4444; text-align: center; border-bottom: 2px solid #333; padding-bottom: 10px; }
-        .section { background: #2a2a2a; border-radius: 8px; padding: 15px; margin-bottom: 15px; border-left: 5px solid #ff4444; }
-        .law-title { font-weight: bold; color: #ffaa00; display: block; margin-bottom: 5px; font-size: 1.1em; }
-        .details { font-size: 0.9em; color: #ccc; }
-        .pc-block { border-left-color: #0088ff; }
-        hr { border: 0; border-top: 1px solid #444; margin: 20px 0; }
-        .miranda { font-style: italic; background: #333; padding: 10px; border-radius: 5px; border: 1px dashed #666; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f0f; color: #e0e0e0; margin: 0; padding: 0; }
+        header { background: #1a1a1a; padding: 15px; text-align: center; border-bottom: 2px solid #ff4444; sticky; top: 0; }
+        
+        /* Кнопки меню */
+        .nav-container { display: flex; justify-content: center; gap: 10px; padding: 10px; background: #111; overflow-x: auto; }
+        .nav-btn { background: #222; border: 1px solid #444; color: #fff; padding: 8px 15px; cursor: pointer; border-radius: 5px; white-space: nowrap; }
+        .nav-btn:active { background: #ff4444; }
+
+        .content-section { display: none; padding: 20px; animation: fadeIn 0.3s; }
+        .active { display: block; }
+
+        h2 { color: #ff4444; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .card { background: #1e1e1e; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid #ff4444; }
+        .advocacy-tips { background: #1a2a1a; border-left-color: #44ff44; padding: 15px; border-radius: 8px; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
-    <h1>MAJESTIC PHOENIX</h1>
+<header>
+    <h2 style="margin:0; color: #fff;">PHOENIX LAW</h2>
+</header>
 
-    <div class="section">
-        <span class="law-title">УГОЛОВНЫЙ КОДЕКС (УК)</span>
-        <div class="details">
-            <b>Статья 12.8:</b> Незаконное оружие (без номеров/лицензии). Изъятие + срок.<br>
-            <b>Статья 13.5:</b> Наркотики (хранение от 5г/сбыт). Изъятие + срок.
-        </div>
+<div class="nav-container">
+    <button class="nav-btn" onclick="showSection('main')">Главная</button>
+    <button class="nav-btn" onclick="showSection('uk')">Уголовный кодекс</button>
+    <button class="nav-btn" onclick="showSection('ak')">Административный</button>
+    <button class="nav-btn" onclick="showSection('pk')">Процессуальный</button>
+</div>
+
+<div id="main" class="content-section active">
+    <h2>КАК ДУШИТЬ АДВОКАТА</h2>
+    <div class="advocacy-tips">
+        <p><b>1. Проверка документов:</b> Требуй удостоверение в развернутом виде. Нет лицухи — гуляй.</p>
+        <p><b>2. Время ожидания:</b> Вызвал адвоката? Засекай ровно 10 минут. Ни секундой больше.</p>
+        <p><b>3. Конфиденциальная беседа:</b> Если он требует 15 минут, следи, чтобы не передал ничего задержанному.</p>
+        <p><i>(Сюда добавим твои коронные методы, когда напишешь)</i></p>
+    </div>
+</div>
+
+<div id="uk" class="content-section">
+    <h2>УГОЛОВНЫЙ КОДЕКС</h2>
+    <div class="card">
+        <b>Статья 12.8</b><br>
+        Незаконное оружие. До 50 месяцев.
+    </div>
     </div>
 
-    <div class="section pc-block">
-        <span class="law-title">ПРОЦЕССУАЛЬНЫЙ КОДЕКС (ПК)</span>
-        <div class="details">
-            1. <b>Надеть наручники</b> (огласить причину).<br>
-            2. <b>Представиться</b> (показать жетон/удостоверение).<br>
-            3. <b>Миранда</b> (зачитать права сразу).<br>
-            4. <b>Первичный обыск</b> (только оружие/нелегал).<br>
-            5. <b>Доставка в КПЗ</b> и вторичный обыск.
-        </div>
+<div id="ak" class="content-section">
+    <h2>АДМИНИСТРАТИВНЫЙ КОДЕКС</h2>
+    <div class="card">
+        <b>Статья 1.1</b><br>
+        Нарушение дорожного кодекса. Штраф.
     </div>
+</div>
 
-    <div class="section">
-        <span class="law-title">ПРАВИЛО МИРАНДЫ</span>
-        <div class="miranda">
-            "Вы имеете право хранить молчание. Всё, что вы скажете, может и будет использовано против вас..."
-        </div>
+<div id="pk" class="content-section">
+    <h2>ПРОЦЕССУАЛЬНЫЙ КОДЕКС</h2>
+    <div class="card">
+        1. Наручники -> 2. Жетон -> 3. Миранда.
     </div>
+</div>
 
-    <p style="text-align:center; color:#555; font-size:0.8em;">Sap Support © 2026</p>
-
-</body>
-</html>
+<script>
+    function showSection(id) {
+        // Скрываем все секции
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
