@@ -1,75 +1,74 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHOENIX | DATABASE</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f0f; color: #e0e0e0; margin: 0; padding: 0; }
-        header { background: #1a1a1a; padding: 15px; text-align: center; border-bottom: 2px solid #ff4444; sticky; top: 0; }
+        body { background: #000; color: #fff; font-family: sans-serif; margin: 0; padding: 0; }
+        .nav { display: flex; flex-wrap: wrap; background: #111; position: sticky; top: 0; border-bottom: 2px solid red; z-index: 999; }
+        .nav button { flex: 1; padding: 15px; background: #111; color: #fff; border: none; cursor: pointer; font-size: 12px; font-weight: bold; border-right: 1px solid #222; }
+        .nav button:last-child { border-right: none; }
+        .nav button:active { background: #333; }
         
-        /* Кнопки меню */
-        .nav-container { display: flex; justify-content: center; gap: 10px; padding: 10px; background: #111; overflow-x: auto; }
-        .nav-btn { background: #222; border: 1px solid #444; color: #fff; padding: 8px 15px; cursor: pointer; border-radius: 5px; white-space: nowrap; }
-        .nav-btn:active { background: #ff4444; }
-
-        .content-section { display: none; padding: 20px; animation: fadeIn 0.3s; }
+        .content { display: none; padding: 20px; }
         .active { display: block; }
-
-        h2 { color: #ff4444; border-bottom: 1px solid #333; padding-bottom: 5px; }
-        .card { background: #1e1e1e; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid #ff4444; }
-        .advocacy-tips { background: #1a2a1a; border-left-color: #44ff44; padding: 15px; border-radius: 8px; }
         
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        h2 { color: red; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .block { background: #111; border: 1px solid #333; padding: 15px; border-radius: 8px; margin-bottom: 15px; }
+        b { color: orange; }
     </style>
 </head>
 <body>
 
-<header>
-    <h2 style="margin:0; color: #fff;">PHOENIX LAW</h2>
-</header>
-
-<div class="nav-container">
-    <button class="nav-btn" onclick="showSection('main')">Главная</button>
-    <button class="nav-btn" onclick="showSection('uk')">Уголовный кодекс</button>
-    <button class="nav-btn" onclick="showSection('ak')">Административный</button>
-    <button class="nav-btn" onclick="showSection('pk')">Процессуальный</button>
+<div class="nav">
+    <button onclick="tab('main')">ГЛАВНАЯ</button>
+    <button onclick="tab('uk')">УГОЛОВНЫЙ</button>
+    <button onclick="tab('ak')">АДМИН</button>
+    <button onclick="tab('pk')">ПРОЦЕСС</button>
 </div>
 
-<div id="main" class="content-section active">
-    <h2>КАК ДУШИТЬ АДВОКАТА</h2>
-    <div class="advocacy-tips">
-        <p><b>1. Проверка документов:</b> Требуй удостоверение в развернутом виде. Нет лицухи — гуляй.</p>
-        <p><b>2. Время ожидания:</b> Вызвал адвоката? Засекай ровно 10 минут. Ни секундой больше.</p>
-        <p><b>3. Конфиденциальная беседа:</b> Если он требует 15 минут, следи, чтобы не передал ничего задержанному.</p>
-        <p><i>(Сюда добавим твои коронные методы, когда напишешь)</i></p>
+<div id="main" class="content active">
+    <h2>🎯 КАК ДУШИТЬ АДВОКАТА</h2>
+    <div class="block">
+        1. <b>Лицензия:</b> Нет в реестре — выгоняй.<br><br>
+        2. <b>Таймер:</b> 10 минут на приезд. Опоздал на секунду — сажай без него.<br><br>
+        3. <b>Обыск:</b> Если качает права — проверяй по закону о закрытых территориях.
     </div>
 </div>
 
-<div id="uk" class="content-section">
+<div id="uk" class="content">
     <h2>УГОЛОВНЫЙ КОДЕКС</h2>
-    <div class="card">
-        <b>Статья 12.8</b><br>
-        Незаконное оружие. До 50 месяцев.
-    </div>
-    </div>
-
-<div id="ak" class="content-section">
-    <h2>АДМИНИСТРАТИВНЫЙ КОДЕКС</h2>
-    <div class="card">
-        <b>Статья 1.1</b><br>
-        Нарушение дорожного кодекса. Штраф.
-    </div>
+    <div class="block"><b>Статья 12.8:</b> Нелегал. Изъятие + срок.</div>
+    <div class="block"><b>Статья 13.5:</b> Наркота (5г+). Изъятие + срок.</div>
 </div>
 
-<div id="pk" class="content-section">
+<div id="ak" class="content">
+    <h2>АДМИНИСТРАТИВНЫЙ КОДЕКС</h2>
+    <div class="block"><b>Статья 10.1:</b> Нарушение ПДД. Штраф.</div>
+</div>
+
+<div id="pk" class="content">
     <h2>ПРОЦЕССУАЛЬНЫЙ КОДЕКС</h2>
-    <div class="card">
-        1. Наручники -> 2. Жетон -> 3. Миранда.
+    <div class="block">
+        1. Наручники<br>
+        2. Жетон<br>
+        3. Миранда<br>
+        4. Обыск
     </div>
 </div>
 
 <script>
-    function showSection(id) {
-        // Скрываем все секции
-        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+    function tab(id) {
+        // Прячем всё
+        var sections = document.getElementsByClassName('content');
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = 'none';
+        }
+        // Показываем нужное
+        document.getElementById(id).style.display = 'block';
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
