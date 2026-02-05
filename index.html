@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>PHOENIX DATABASE</title>
     <style>
-        body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-        header { background: #111; padding: 15px; text-align: center; border-bottom: 2px solid red; font-size: 1.2em; font-weight: bold; letter-spacing: 2px; }
+        body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        header { background: #111; padding: 15px; text-align: center; border-bottom: 2px solid red; font-size: 1.2em; font-weight: bold; }
         
         .nav { display: flex; flex-wrap: wrap; background: #1a1a1a; position: sticky; top: 0; z-index: 999; }
-        .nav button { flex: 1; min-width: 25%; padding: 15px 5px; background: #1a1a1a; color: #fff; border: none; border-bottom: 3px solid transparent; cursor: pointer; font-size: 10px; font-weight: bold; transition: 0.2s; }
+        .nav button { flex: 1; min-width: 25%; padding: 15px 5px; background: #1a1a1a; color: #fff; border: none; border-bottom: 3px solid transparent; cursor: pointer; font-size: 10px; font-weight: bold; }
         .nav button.active-btn { border-bottom: 3px solid red; background: #222; }
 
         .content { display: none; padding: 15px; animation: fadeIn 0.3s; }
         .active-section { display: block; }
 
         h2 { color: red; font-size: 1.1em; text-transform: uppercase; border-left: 3px solid red; padding-left: 10px; margin: 10px 0; }
-        .block { background: #111; border: 1px solid #222; padding: 12px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.4); }
+        .block { background: #111; border: 1px solid #222; padding: 15px; border-radius: 8px; margin-bottom: 15px; line-height: 1.5; }
         
-        .law-header { color: #ffaa00; font-weight: bold; font-size: 1.05em; display: block; margin-bottom: 5px; }
-        .stars { color: #ffff00; font-size: 0.9em; }
-        .punish { color: #ff5555; font-weight: bold; display: block; margin-top: 5px; }
-        .tip-box { border-left: 3px solid #00ff00; background: #0a150a; }
+        .law-header { color: #ffaa00; font-weight: bold; font-size: 1.1em; display: block; margin-bottom: 8px; }
+        .stars { color: #ffff00; font-size: 0.9em; margin-bottom: 5px; display: block; }
+        .punish { color: #ff5555; font-weight: bold; display: block; margin-top: 10px; border-top: 1px solid #333; padding-top: 8px; }
+        .part-title { color: #0088ff; font-weight: bold; display: block; margin-top: 12px; margin-bottom: 4px; }
+        .note { color: #aaa; font-size: 0.9em; font-style: italic; display: block; margin-top: 10px; background: #0d0d0d; padding: 10px; border-left: 3px solid #444; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
@@ -39,10 +40,10 @@
 
 <div id="main" class="content active-section">
     <h2>🎯 ИНСТРУКЦИЯ ПО АДВОКАТАМ</h2>
-    <div class="block tip-box">
-        <b>1. Реестр:</b> Нет в списках — гуляй.<br>
-        <b>2. Таймер:</b> Ровно 10 минут на приезд.<br>
-        <b>3. Досмотр:</b> Проверяй документы и наличие маски.
+    <div class="block" style="border-left: 4px solid #00ff00; background: #0a150a;">
+        <b>1. Проверка документов:</b> Требуй удостоверение в развернутом виде. Нет в реестре — свободен.<br><br>
+        <b>2. Время ожидания:</b> Засекай ровно 10 минут. Опоздал — продолжаем без него.<br><br>
+        <b>3. Конфиденциальная беседа:</b> Дается 15 минут. Следи за передачей запрещенки.
     </div>
 </div>
 
@@ -50,133 +51,31 @@
     <h2>УГОЛОВНЫЙ КОДЕКС</h2>
 
     <div class="block">
-        <span class="law-header">Статья 7.1 Похищение</span>
+        <span class="law-header">Статья 7.1 Похищение человека</span>
         <span class="stars">★★★★★ [Федеральная]</span>
-        Захват или удержание человека.
-        <span class="punish">Наказание: 5 лет.</span>
+        <span class="part-title">ч. 1</span> Похищение человека, то есть его незаконный захват, перемещение и последующее удержание, в том числе совершенный в целях понуждения государства, организации или гражданина совершить какое-либо действие или воздержаться от совершения какого-либо действия как условия освобождения заложника.
+        <span class="punish">Наказание: 5 лет лишения свободы.</span>
     </div>
 
     <div class="block">
         <span class="law-header">Статья 10.1.1 Кража со взломом</span>
-        <span class="stars">★★★★ [Регион/Федер]</span>
-        Тайное хищение со взломом сейфа/хранилища.
-        <span class="punish">Наказание: 4 года.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 10.5 Угон ТС</span>
-        <span class="stars">★★★ [Федер/Регион]</span>
-        Завладение автомобилем.
-        <span class="punish">Наказание: До 3 лет.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 12.7 Проникновение</span>
-        <b>ч.1 ★★★ Охраняемый:</b> 3 года / штраф 20-50к.<br>
-        <b>ч.2 ★★★★ Особо охраняемый:</b> 4-5 лет / штраф 60-80к.<br>
-        <b>ч.3 ★★★★★ Долж. лицо:</b> 5 лет / штраф 60-80к.
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 12.8 Оборот оружия</span>
-        <span class="stars">★★★★ [Федер/Регион]</span>
-        Незаконный сбыт, хранение или ношение.
-        <span class="punish">Наказание: 4 года или штраф 10-30к.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 12.8.1 Гос. спецсредства</span>
-        <span class="stars">★★★★★ [Федер/Регион]</span>
-        Броники, тазеры, дубинки с номерами гос. образца.
-        <span class="punish">Наказание: 5 лет.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 13.1 Производство нарко</span>
-        <span class="stars">★★★ [Федер/Регион]</span>
-        Полив, рассада, кустарное производство.
-        <span class="punish">Наказание: 3 года или штраф 20-40к.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 13.2 Хранение нарко</span>
-        <span class="stars">★★★★ [Федер/Регион]</span>
-        От 3 грамм (Лицуха KNN — до 5г).
-        <span class="punish">Наказание: 4 года или штраф 40-60к.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 17.1 Посягательство на жизнь</span>
-        <span class="stars">★★★★★ [Федер/Регион]</span>
-        Нападение на сотрудника или его близких.
-        <span class="punish">Наказание: 5 лет.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 17.2 Насилие к гос. лицу</span>
-        <span class="stars">★★★★ [Федер/Регион]</span>
-        Угрозы или насилие, не опасное для жизни.
-        <span class="punish">Наказание: 4 года.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 17.3 Оскорбление</span>
-        <span class="stars">★★★ [Федер/Регион]</span>
-        Унижение достоинства словом, жестом или плевком.
-        <span class="punish">Наказание: 3 года или штраф 20-50к.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 17.4 Провокация</span>
-        <span class="stars">★★★ [Федер/Регион]</span>
-        Отвлечение от службы или помеха работе.
-        <span class="punish">Наказание: 3 года или штраф 20-60к.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 17.6 Неповиновение</span>
-        <span class="stars">★★★ [Федер/Регион]</span>
-        Отказ выполнять законное требование.
-        <span class="punish">Наказание: 3 года или штраф 20-60к.</span>
-    </div>
-
-    <div class="block">
-        <span class="law-header">Статья 17.8 Подделка документов</span>
-        <span class="stars">★★★★ [Федер/Регион]</span>
-        Использование левой лицензии или подделка удо.
+        <span class="stars">★★★★ [Региональная/Федеральная]</span>
+        Кража со взломом, то есть тайное хищение чужого имущества, совершённое с предварительным взломом хранилища, помещения, сейфа или иного запирающего устройства.
         <span class="punish">Наказание: 4 года лишения свободы.</span>
     </div>
-</div>
 
-<div id="ak" class="content">
-    <h2>АДМИНИСТРАТИВНЫЙ КОДЕКС</h2>
-    <div class="block">Жду список штрафов АК...</div>
-</div>
-
-<div id="pk" class="content">
-    <h2>ПРОЦЕССУАЛЬНЫЙ КОДЕКС</h2>
     <div class="block">
-        1. Наручники<br>
-        2. Жетон<br>
-        3. Миранда<br>
-        4. Обыск
+        <span class="law-header">Статья 10.5 Угон</span>
+        <span class="stars">★★★ [Федеральная/Региональная]</span>
+        Неправомерное завладение автомобилем или иным транспортным средством.
+        <span class="punish">Наказание: До 3 лет лишения свободы.</span>
     </div>
-</div>
 
-<script>
-    function show(id) {
-        var sections = document.getElementsByClassName('content');
-        for (var i = 0; i < sections.length; i++) {
-            sections[i].classList.remove('active-section');
-        }
-        var buttons = document.querySelectorAll('.nav button');
-        buttons.forEach(btn => btn.classList.remove('active-btn'));
+    <div class="block">
+        <span class="law-header">Статья 12.7 Незаконное проникновение</span>
+        <span class="stars">[Федеральная/Региональная]</span>
+        
+        <span class="part-title">ч.1 ★★★</span> Незаконное проникновение и/или нахождение на охраняемом объекте в соответствие с законодательством Штата Сан-Андреас.
+        <span class="punish">Наказание: 3 года лишения свободы, либо уголовный штраф в размере от 20.000$ до 50.000$.</span>
 
-        document.getElementById(id).classList.add('active-section');
-        document.getElementById('btn-' + id).classList.add('active-btn');
-        window.scrollTo(0,0);
-    }
-</script>
-
-</body>
-</html>
+        <span class="part-title">ч.2 ★★★★</span> Незаконное проникновение и/или нахождение на
