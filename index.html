@@ -2,57 +2,34 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHOENIX LAW</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PHOENIX DATABASE</title>
     <style>
-        body { background: #000; color: #fff; font-family: sans-serif; margin: 0; }
-        .nav { display: flex; sticky; top: 0; background: #111; border-bottom: 2px solid red; z-index: 999; }
-        .nav button { flex: 1; padding: 15px; background: none; color: #fff; border: none; font-weight: bold; font-size: 10px; }
-        .nav button.active-btn { background: #222; border-bottom: 3px solid red; }
-        .content { display: none; padding: 15px; }
+        body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        header { background: #111; padding: 15px; text-align: center; border-bottom: 2px solid red; font-size: 1.2em; font-weight: bold; }
+        
+        .nav { display: flex; flex-wrap: wrap; background: #1a1a1a; position: sticky; top: 0; z-index: 999; }
+        .nav button { flex: 1; min-width: 25%; padding: 15px 5px; background: #1a1a1a; color: #fff; border: none; border-bottom: 3px solid transparent; cursor: pointer; font-size: 10px; font-weight: bold; }
+        .nav button.active-btn { border-bottom: 3px solid red; background: #222; }
+
+        .content { display: none; padding: 15px; animation: fadeIn 0.3s; }
         .active-section { display: block; }
+
+        h2 { color: red; font-size: 1.1em; text-transform: uppercase; border-left: 3px solid red; padding-left: 10px; margin: 10px 0; }
         .block { background: #111; border: 1px solid #222; padding: 15px; border-radius: 8px; margin-bottom: 15px; line-height: 1.5; }
-        h2 { color: red; font-size: 1.1em; border-left: 3px solid red; padding-left: 10px; }
+        
+        .law-header { color: #ffaa00; font-weight: bold; font-size: 1.1em; display: block; margin-bottom: 8px; }
+        .stars { color: #ffff00; font-size: 0.9em; margin-bottom: 5px; display: block; }
+        .punish { color: #ff5555; font-weight: bold; display: block; margin-top: 10px; border-top: 1px solid #333; padding-top: 8px; }
+        .part-title { color: #0088ff; font-weight: bold; display: block; margin-top: 12px; margin-bottom: 4px; }
+        .note { color: #aaa; font-size: 0.9em; font-style: italic; display: block; margin-top: 10px; background: #0d0d0d; padding: 10px; border-left: 3px solid #444; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
+
+<header>PHOENIX LAW</header>
+
 <div class="nav">
-    <button id="btn-main" class="active-btn" onclick="show('main')">ГЛАВНАЯ</button>
-    <button id="btn-uk" onclick="show('uk')">УК</button>
-    <button id="btn-ak" onclick="show('ak')">АДМИН</button>
-    <button id="btn-pk" onclick="show('pk')">ПРОЦЕСС</button>
-</div>
-
-<div id="main" class="content active-section">
-    <h2>🎯 ИНСТРУКЦИЯ ПО АДВОКАТАМ</h2>
-    <div class="block"><b>1. Реестр:</b> Нет в списках — гуляй. <br> <b>2. Таймер:</b> 10 минут. <br> <b>3. Обыск:</b> Проверка документов и маски.</div>
-</div>
-
-<div id="uk" class="content">
-    <h2>УГОЛОВНЫЙ КОДЕКС</h2>
-    <div class="block">Весь твой текст УК здесь... (вставь его между этими тегами)</div>
-</div>
-
-<div id="ak" class="content">
-    <h2>АДМИНИСТРАТИВНЫЙ</h2>
-    <div class="block">Штрафы здесь...</div>
-</div>
-
-<div id="pk" class="content">
-    <h2>ПРОЦЕССУАЛЬНЫЙ</h2>
-    <div class="block">Порядок задержания...</div>
-</div>
-
-<script>
-    function show(id) {
-        var sections = document.getElementsByClassName('content');
-        for (var i = 0; i < sections.length; i++) { sections[i].classList.remove('active-section'); }
-        var buttons = document.querySelectorAll('.nav button');
-        buttons.forEach(btn => btn.classList.remove('active-btn'));
-        document.getElementById(id).classList.add('active-section');
-        document.getElementById('btn-' + id).classList.add('active-btn');
-        window.scrollTo(0,0);
-    }
-</script>
-</body>
-</html>
+    <button id="btn-main" class="active-btn" onclick="
